@@ -1,0 +1,106 @@
+[
+  {
+    "id": "1",
+    "car": {
+      "year": 2025,
+      "make": "Toyota",
+      "model": "GR Corolla",
+      "price": 20000,
+      "mileage": 15000,
+      "imagePath": "/data/images/corolla.avif",
+      "location": "Fairfax, VA"
+    }
+  },
+  {
+    "id": "2",
+    "car": {
+      "id": "2",
+      "year": 2024,
+      "make": "Honda",
+      "model": "Civic Type R",
+      "price": 38000,
+      "mileage": 20000,
+      "imagePath": "/data/images/0af99dfa-1",
+      "location": "Manassas, VA",
+      "imageFile": {}
+    }
+  },
+  {
+    "id": "3",
+    "car": {
+      "id": "3",
+      "year": 2021,
+      "make": "Ford",
+      "model": "Mustang Ecoboost Base",
+      "price": 26000,
+      "mileage": 69000,
+      "imagePath": "/data/images/fd4fe181-d",
+      "location": "Gaithersburg, MD",
+      "imageFile": {}
+    }
+  },
+  {
+    "id": "j3zwm7www",
+    "car": {
+      "make": "Subaru",
+      "model": "WRX",
+      "year": 2019,
+      "price": 28000,
+      "mileage": 78000,
+      "imagePath": "/data/images/cnyx94q5m",
+      "location": "Fairfax, VA"
+    }
+  },
+  {
+    "id": "u0wkxvapi",
+    "car": {
+      "id": "u0wkxvapi",
+      "make": "Maserati",
+      "model": "Ghibli Base",
+      "year": 2014,
+      "price": 13669,
+      "mileage": 67420,
+      "imagePath": "/data/images/ujkzc3i4g",
+      "location": "Trevose, PA"
+    }
+  },
+  {
+    "id": "57w3cj8vo",
+    "car": {
+      "make": "Nissan",
+      "model": "350Z Base",
+      "year": 2006,
+      "price": 9000,
+      "mileage": 78000,
+      "imagePath": "/data/images/6bohenlsc",
+      "location": "Orlando, FL",
+      "imageFile": {}
+    }
+  },
+  {
+    "id": "i08ymhcbp",
+    "car": {
+      "id": "i08ymhcbp",
+      "make": "Toyota",
+      "model": "Supra",
+      "year": 2024,
+      "price": 65000,
+      "mileage": 7000,
+      "imagePath": "/data/images/dz8o53p92",
+      "location": "Orlando, FL"
+    }
+  },
+  {
+    "id": "0e0c4817-a",
+    "car": {
+      "make": "Acura",
+      "model": "NSX Type S",
+      "year": 2022,
+      "price": 171000,
+      "mileage": 1000,
+      "imagePath": "/data/images/377b5026-f",
+      "location": "Washington, DC",
+      "imageFile": {}
+    }
+  }
+]
