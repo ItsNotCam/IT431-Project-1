@@ -12,20 +12,6 @@
     }
   },
   {
-    "id": "2",
-    "car": {
-      "id": "2",
-      "year": 2024,
-      "make": "Honda",
-      "model": "Civic Type R",
-      "price": 38000,
-      "mileage": 20000,
-      "imagePath": "/data/images/0af99dfa-1",
-      "location": "Manassas, VA",
-      "imageFile": {}
-    }
-  },
-  {
     "id": "3",
     "car": {
       "id": "3",

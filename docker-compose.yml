@@ -1,0 +1,7 @@
+services:
+  web:
+    image: it431_project_1
+    build: .
+    ports:
+      - "3150:3000"
+    

@@ -36,7 +36,7 @@ const CarForm: React.FC<CarFormProps> = (props) => {
 		if(props.isOpen) {
 			formRef.current?.reset();
 		}
-	},[props.isOpen])
+	},[props.isOpen, props.car])
 
 	useEffect(() => setTitle(props.title), [props.title]);
 

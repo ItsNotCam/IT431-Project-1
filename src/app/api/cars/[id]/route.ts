@@ -4,7 +4,7 @@ import {  NextResponse } from "next/server";
 
 import fs from 'fs/promises';
 
-export async function GET({ params }: CarApiParams) {
+export async function GET(_: Request, { params }: CarApiParams) {
 	const ps = await params;
 	const car = await getCar(ps.id);
 	
@@ -47,7 +47,7 @@ export async function PUT(req: Request, { params }: CarApiParams) {
 			await fs.writeFile(`./public/${imagePath}`, imageBuffer);
 			carData.imagePath = `/${imagePath}`
 		} catch (e) {
-			console.error('Failed to write image file');
+			console.error('Failed to write image file', e);
 				// return NextResponse.json({
 				// 	success: false
 				// },{
@@ -77,7 +77,7 @@ export async function PUT(req: Request, { params }: CarApiParams) {
 	})
 }
 
-export async function DELETE(req: NextApiRequest, { params }: CarApiParams) {
+export async function DELETE(_: NextApiRequest, { params }: CarApiParams) {
 	const ps = await params;
 	const car = await getCar(ps.id);
 	if(!car) {

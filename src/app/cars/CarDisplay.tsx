@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useEffect } from 'react';
+import React from 'react';
 import SearchIcon from '@/assets/SearchIcon.svg';
 
 import Image from 'next/image';
@@ -131,7 +131,7 @@ const CarDisplay: React.FC<CarDisplayProps> = (props) => {
 					my-4
 				">
 				{/* <div className="flex flex-wrap gap-2 items-center my-4"> */}
-					{cars.filter(c => shouldDisplayCar(c)).map((car, index) => 
+					{cars.filter(c => shouldDisplayCar(c)).map((car) => 
 						<CarCard 
 							key={car.id}
 							car={car} 

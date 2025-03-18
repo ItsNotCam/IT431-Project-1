@@ -16,9 +16,9 @@ export async function POST(req: Request) {
 	const formData: FormData = await req.formData();
 
 	const car: Car = JSON.parse(formData.get('car') as string);
-	car.mileage = parseInt(car.mileage as any);
-	car.price = parseInt(car.price as any);
-	car.year = parseInt(car.year as any);
+	car.mileage = parseInt(car.mileage as unknown as string);
+	car.price = parseInt(car.price as unknown as string);
+	car.year = parseInt(car.year as unknown as string);
 
 	// save the file
 	const imageFile = formData.get('imageFile') as Blob | null;
@@ -28,7 +28,7 @@ export async function POST(req: Request) {
 		try {
 			await fs.writeFile(`./public/${imagePath}`, imageBuffer);
 		} catch (e) {
-			console.error('Failed to write image file');
+			console.error('Failed to write image file', e);
 			return NextResponse.json({
 				success: false,
 				car: null,
