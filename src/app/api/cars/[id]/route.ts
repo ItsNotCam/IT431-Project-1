@@ -1,10 +1,9 @@
 import { deleteCar, generateId, getCar, getCars, updateCar } from "@/lib/db";
-import { NextApiRequest } from "next";
-import {  NextResponse } from "next/server";
+import {  NextRequest, NextResponse } from "next/server";
 
 import fs from 'fs/promises';
 
-export async function GET(_: Request, { params }: CarApiParams) {
+export async function GET(_: NextRequest, { params }: CarApiParams) {
 	const ps = await params;
 	const car = await getCar(ps.id);
 	
@@ -23,7 +22,7 @@ export async function GET(_: Request, { params }: CarApiParams) {
 	})
 }
 
-export async function PUT(req: Request, { params }: CarApiParams) {
+export async function PUT(req: NextRequest, {params}: CarApiParams ) {
 	const ps = await params;
 	const car = await getCar(ps.id);
 	if(!car) {
@@ -47,7 +46,7 @@ export async function PUT(req: Request, { params }: CarApiParams) {
 			await fs.writeFile(`./public/${imagePath}`, imageBuffer);
 			carData.imagePath = `/${imagePath}`
 		} catch (e) {
-			console.error('Failed to write image file', e);
+			console.error('Failed to write image file:', (e as Err).message);
 				// return NextResponse.json({
 				// 	success: false
 				// },{
@@ -77,7 +76,7 @@ export async function PUT(req: Request, { params }: CarApiParams) {
 	})
 }
 
-export async function DELETE(_: NextApiRequest, { params }: CarApiParams) {
+export async function DELETE(_: NextRequest, { params }:CarApiParams) {
 	const ps = await params;
 	const car = await getCar(ps.id);
 	if(!car) {
@@ -92,7 +91,7 @@ export async function DELETE(_: NextApiRequest, { params }: CarApiParams) {
 	try {
 		cars = await deleteCar(ps.id);
 	} catch (e) {
-		console.error("Failed to delete car", e);
+		console.error("Failed to delete car", (e as Err).message);
 
 		return NextResponse.json({
 			success: false

@@ -1,5 +1,5 @@
 import { addCar, generateId, getCars } from '@/lib/db';
-import { NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 
 import fs from 'fs/promises';
 
@@ -12,7 +12,7 @@ export async function GET() {
 	})
 }
 
-export async function POST(req: Request) {
+export async function POST(req: NextRequest) {
 	const formData: FormData = await req.formData();
 
 	const car: Car = JSON.parse(formData.get('car') as string);

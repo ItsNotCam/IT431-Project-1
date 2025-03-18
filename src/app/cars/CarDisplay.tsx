@@ -142,23 +142,27 @@ const CarDisplay: React.FC<CarDisplayProps> = (props) => {
 			</div>
 		</div>
 
-		<CarForm 
-			action={addCar}
-			isOpen={formState === "add"}
-			title="Add a Car"
-			close={() => {
-				setFormState("close");
-				setSelectedCar(baseSelectedCar)
-			}}
-		/>
-
-		<CarForm 
-			action={(car: Car) => updateCar(selectedCar.id, car)}
-			isOpen={formState === "edit"}
-			close={() => setFormState("close")}
-			title={`Edit '${selectedCar.car.make} ${selectedCar.car.model}'`}
-			car={selectedCar.car}
-		/>
+		{
+			formState === "add" ? (
+				<CarForm 
+				action={addCar}
+				isOpen={formState === "add"}
+				title="Add a Car"
+				close={() => {
+					setFormState("close");
+					setSelectedCar(baseSelectedCar)
+				}}
+			/>
+			) : (
+				<CarForm 
+					action={(car: Car) => updateCar(selectedCar.id, car)}
+					isOpen={formState === "edit"}
+					close={() => setFormState("close")}
+					title={`Edit '${selectedCar.car.make} ${selectedCar.car.model}'`}
+					car={selectedCar.car}
+				/>
+			)
+		}
 
 		<div className="fixed bottom-0 right-0 m-4">
 			<button className="

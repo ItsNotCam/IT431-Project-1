@@ -48,8 +48,6 @@ export const addCar = async(car: Car): Promise<DBCar> => {
 
 export const deleteCar = async (id: string): Promise<DBCar[]> => {
 	const db = await loadDB();
-	db.data.forEach((c) => console.log(c.id));
-
 	db.data = db.data.filter((c: DBCar) => c.id !== id);
 	await db.write().catch(e => console.log(e));
 
@@ -60,17 +58,12 @@ export const updateCar = async (id: string, car: Car): Promise<DBCar> => {
 	const db = await loadDB();
 
 	const index = db.data.findIndex((c) => c.id === id);
-	console.log("found index", index);
 	const updatedCar = {
 		id: db.data[index].id,
 		...car
 	}
 
-	console.log("updatedcar", updatedCar);
-
 	db.update((data) => data[index].car = updatedCar);
-
-	// db.data[index].car = updatedCar;
 	await db.write().catch(e => console.log(e));
 
 	return db.data[index];

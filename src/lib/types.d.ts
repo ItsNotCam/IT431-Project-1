@@ -26,3 +26,7 @@ interface CarApiParams {
 }
 
 type FormState = "add" | "edit" | "close";
+
+type Err = {
+	message: string
+}
